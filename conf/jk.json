@@ -1,0 +1,274 @@
+{
+    "说明": "此配置支持自定义填写监控变量，频道id需要加在diybotset.json配置文件的myzdjr_chatId中，变量就填这里。修改即生效，无需重启，注意备份！",
+
+    "/注释cmdName/": "cmdName: 执行命令，青龙默认task，一般不需要修改。",
+
+    "/注释isNow/": "isNow: 是否开启随机延时执行脚本，true=开启，false=关闭。",
+
+    "/注释isOpen/": "isOpen: 是否开启监控该变量，true=开启，false=关闭",
+  
+    "/注释name/": "name: 脚本名称备注或自定义名字，不重要。",
+  
+    "/注释envName/": "envName: 监控的变量名称，必要。如同一个脚本有多个变量只需要填其中一个即可",
+  
+    "/注释scriptPath/": "scriptPath: 变量应对的脚本路径，必要。相对路径默认执行/ql/scripts/下面脚本，可填绝对路径。",
+
+    "/注释log_send日志发送模式/": "1-bot发送；2-user发送；",
+
+    "/注释log_type显示形式/": "1-默认（1000字符内文本形式，大于1000字符log文件）；2-仅发送log文件",
+
+    "cmdName": "task",
+
+    "isNow": true,
+
+    "log_send": "1",
+
+    "log_type": "1",
+    
+    "monitor_converters": {
+         "jd_zdjr_activityId": {
+            "after_key": "M_WX_TEAM_URL",
+            "after_value": "https://lzkjdz-isv.isvjcloud.com/wxTeam/activity2/875406?activityId=%s"
+        },   
+        "jd_cjhy_activityId": {
+            "after_key": "M_WX_TEAM_URL",
+            "after_value": "https://cjhydz-isv.isvjcloud.com/wxTeam/activity?activityId=%s"
+        },
+        "LUCK_DRAW_URL": {
+            "after_key": "M_WX_LUCK_DRAW_URL",
+            "after_value": "%s"
+        },
+        "jd_wxCollectionActivityUrl": {
+            "after_key": "M_WX_ADD_CART_URL",
+            "after_value": "%s"
+        },
+        "jd_wxCollectionActivity_activityUrl": {
+            "after_key": "M_WX_ADD_CART_URL",
+            "after_value": "%s"
+        },
+        "jd_wxMcLevelAndBirthGifts_activityId": {
+            "after_key": "M_WX_LEVEL_BIRTH_URL",
+            "after_value": "https://cjhy-isv.isvjcloud.com/mc/wxMcLevelAndBirthGifts/activity?activityId=%s"
+        },
+        "jd_wxMcLevelAndBirthGifts_activityId": {
+            "after_key": "M_WX_LEVEL_BIRTH_URL",
+            "after_value": "https://cjhy-isv.isvjcloud.com/mc/wxMcLevelAndBirthGifts/activity?activityId=%s"
+        },
+        "jd_cjhy_wxMcLevelAndBirthGifts_ids": {
+            "after_key": "M_WX_LEVEL_BIRTH_URL",
+            "after_value": "https://cjhy-isv.isvjcloud.com/mc/wxMcLevelAndBirthGifts/activity?activityId=%s"
+        },
+        "jd_wxBirthGiftsId": {
+            "after_key": "M_WX_LEVEL_BIRTH_URL",
+            "after_value": "https://cjhy-isv.isvjcloud.com/mc/wxMcLevelAndBirthGifts/activity?activityId=%s"
+        },
+        "jd_wxShopFollowActivity_activityUrl": {
+            "after_key": "M_WX_FOLLOW_DRAW_URL",
+            "after_value": "%s"
+        },
+        "jd_wxShareActivity_activityId": {
+            "after_key": "M_WX_SHARE_URL",
+            "after_value": "https://lzkjdz-isv.isvjd.com/wxShareActivity/activity/activity?activityId=%s"
+        },
+        "jd_drawCenter_activityId": {
+            "after_key": "M_WX_CENTER_DRAW_URL",
+            "after_value": "https://lzkj-isv.isvjd.com/drawCenter/activity/activity?activityId=%s"
+        },
+        "jd_wxgame_activityId": {
+            "after_key": "M_WX_DADOUDOU_URL",
+            "after_value": "https://lzkj-isv.isvjcloud.com/wxgame/activity?activityId=%s"
+        },
+        "jd_wxCollectCard_activityId": {
+            "after_key": "M_WX_COLLECT_CARD_URL",
+            "after_value": "https://lzkjdz-isv.isvjcloud.com/wxCollectCard/activity/activity?activityId=%s"
+        },
+        "jd_lzkj_daily_ids": {
+            "after_key": "jd_daily_activityId",
+            "after_value": "%s"
+        },
+        "jd_cjhy_daily_ids": {
+            "after_key": "jd_cjdaily_activityId",
+            "after_value": "%s"
+        },
+        "jd_wxShopGift_activityUrl": {
+            "after_key": "M_WX_SHOP_GIFT_URL",
+            "after_value": "%s"
+        },
+        "jd_txzj_lottery_id": {
+            "after_key": "jd_lottery_activityUrl",
+            "after_value": "https://txzj-isv.isvjcloud.com/lottery/home?a=%s"
+        },
+        "jd_wxBuildActivity_activityId": {
+            "after_key": "M_WX_BUILD_DRAW_URL",
+            "after_value": "https://lzkj-isv.isvjcloud.com/wxBuildActivity/activity?activityId=%s"
+        }
+    },
+
+  "jk":[
+       {
+           "isOpen": true,
+           "name": "M组队瓜分京豆",
+           "envName": "M_WX_TEAM_URL",
+           "scriptPath": "/ql/scripts/walle1798_WALL.E/m_jd_wx_team.js"
+        },
+        {
+            "isOpen": true,
+            "name": "M集卡抽奖",
+            "envName": "M_WX_COLLECT_CARD_URL",
+            "scriptPath": "/ql/scripts/walle1798_WALL.E/m_jd_wx_collectCard.js"
+         },
+        {
+            "isOpen": true,
+            "name": "M等级生日礼包",
+            "envName": "M_WX_LEVEL_BIRTH_URL",
+            "scriptPath": "/ql/scripts/walle1798_WALL.E/m_jd_wx_levelBirth.js"
+         },
+
+        {
+            "isOpen": true,
+            "name": "M加购有礼",
+            "envName": "M_WX_ADD_CART_URL",
+            "scriptPath": "/ql/scripts/walle1798_WALL.E/m_jd_wx_addCart.js"
+        },
+
+        {
+            "isOpen": true,
+            "name": "M幸运抽奖",
+            "envName": "M_WX_LUCK_DRAW_URL",
+            "scriptPath": "/ql/scripts/walle1798_WALL.E/m_jd_wx_luckDraw.js"
+        },
+
+        {
+            "isOpen": true,
+            "name": "M老虎机抽奖",
+            "envName": "M_WX_CENTER_DRAW_URL",
+            "scriptPath": "/ql/scripts/walle1798_WALL.E/m_jd_wx_centerDraw.js"
+        },
+
+        {
+            "isOpen": true,
+            "name": "M无线游戏",
+            "envName": "M_WX_GAME_URL",
+            "scriptPath": "/ql/scripts/walle1798_WALL.E/m_jd_wx_game.js"
+        },
+
+        {
+            "isOpen": true,
+            "name": "M关注有礼无线",
+            "envName": "M_WX_FOLLOW_DRAW_URL",
+            "scriptPath": "/ql/scripts/walle1798_WALL.E/m_jd_wx_shopGift.js"
+        },
+        {
+            "isOpen": true,
+            "name": "M关注抽奖",
+            "envName": "M_WX_SHOP_GIFT_URL",
+            "scriptPath": "/ql/scripts/walle1798_WALL.E/m_jd_wx_followDraw.js"
+        },
+        {
+            "isOpen": true,
+            "name": "M关注有礼",
+            "envName": "M_FOLLOW_SHOP_ARGV",
+            "scriptPath": "/ql/scripts/walle1798_WALL.E/m_jd_follow_shop.js"
+        },
+        
+        {
+            "isOpen": true,
+            "name": "M分享有礼",
+            "envName": "M_WX_SHARE_URL",
+            "scriptPath": "/ql/scripts/walle1798_WALL.E/m_jd_wx_share.js"
+        },
+        {
+            "isOpen": true,
+            "name": "M打豆豆",
+            "envName": "M_WX_DADOUDOU_URL",
+            "scriptPath": "/ql/scripts/walle1798_WALL.E/m_jd_wx_dadoudou.js"
+        },
+        {
+            "isOpen": true,
+            "name": "【KR】lzkj_loreal加购有礼",
+            "envName": "jd_lzkj_loreal_cart_url",
+            "scriptPath": "/ql/scripts/KingRan_KR/jd_lzkj_loreal_cart.js"
+        },
+        {
+            "isOpen": true,
+            "name": "【KR】lzkj_loreal幸运抽奖",
+            "envName": "jd_lzkj_loreal_draw_url",
+            "scriptPath": "/ql/scripts/KingRan_KR/jd_lzkj_loreal_draw.js"
+        },
+        {
+            "isOpen": true,
+            "name": "【KR】lzkj_loreal关注有礼",
+            "envName": "jd_lzkj_loreal_followShop_url",
+            "scriptPath": "/ql/scripts/KingRan_KR/jd_lzkj_loreal_followShop.js"
+        },
+
+        {
+            "isOpen": true,
+            "name": "【KR】知识超人",
+            "envName": "jd_wxKnowledgeActivity_activityUrl",
+            "scriptPath": "/ql/scripts/KingRan_KR/jd_wxKnowledgeActivity.js"
+         },
+        {
+            "isOpen": true,
+            "name": "【KR】完善有礼",
+            "envName": "jd_completeInfoActivity_activityId",
+            "scriptPath": "/ql/scripts/KingRan_KR/jd_completeInfoActivity.js"
+        },
+        {
+            "isOpen": true,
+            "name": "【KR】让福袋飞",
+            "envName": "jd_wxUnPackingActivity_activityId",
+            "scriptPath": "/ql/scripts/KingRan_KR/jd_wxUnPackingActivity.js"
+        },
+        {
+            "isOpen": true,
+            "name": "【KR】LZ每日抢好礼通用活动",
+            "envName": "jd_daily_activityId",
+            "scriptPath": "/ql/scripts/KingRan_KR/jd_daily.js"
+        },
+        {
+            "isOpen": true,
+            "name": "【KR】CJ每日抢好礼通用活动",
+            "envName": "jd_cjdaily_activityId",
+            "scriptPath": "/ql/scripts/KingRan_KR/jd_cjdaily.js"
+        },
+        {
+            "isOpen": true,
+            "name": "【KR】盲盒任务抽京豆",
+            "envName": "jd_mhurlList",
+            "scriptPath": "/ql/scripts/KingRan_KR/jd_mhtask.js"
+        },
+        {
+            "isOpen": true,
+            "name": "【KR】粉丝互动",
+            "envName": "jd_wxFansInterActionActivity_activityId",
+            "scriptPath": "/ql/scripts/KingRan_KR/jd_wxFansInterActionActivity.js"
+        },
+        {
+            "isOpen": true,
+            "name": "【KR】收藏大师",
+            "envName": "jd_lottery_activityUrl",
+            "scriptPath": "/ql/scripts/KingRan_KR/jd_txzj_lottery.js"
+        },
+        {
+            "isOpen": true,
+            "name": "【KR】店铺左侧刮刮乐",
+            "envName": "jd_shopDraw_activityUrl",
+            "scriptPath": "/ql/scripts/KingRan_KR/jd_shopDraw.js"
+        },
+        {
+            "isOpen": true,
+            "name": "【KR】京东抽奖机通用",
+            "envName": "JD_Lottery",
+            "scriptPath": "/ql/scripts/KingRan_KR/jd_lottery.js"
+        },
+        {
+            "isOpen": true,
+            "name": "【KR】品类联合抽奖",
+            "envName": "jd_categoryUnion_activityId",
+            "scriptPath": "/ql/scripts/KingRan_KR/jd_categoryUnion_draw.js"
+        }
+ 
+   ]
+    
+}
