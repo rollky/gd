@@ -3,7 +3,7 @@
 
 
 <h1 align="center">
-  青龙安装Bot监控
+  青龙安装Bot监控自用备份
   <br>
 </h1>
 - [x]  2022.4.9 已兼容青龙`2.12.x`版本路经
@@ -118,7 +118,7 @@ pm2 restart jbot
 rm -rf /ql/repo/gd && cd /ql/repo/ && git clone https://github.com/rollky/gd.git && pm2 stop jbot ; rm -rf /ql/jbot/* && cp -a /ql/repo/gd/* /ql/jbot/ ; pm2 start jbot
 
 #或一键更新2
-if [ -d /ql/data ];then QL=/ql/data;else QL=/ql; fi;cd ${QL} && rm -f update.sh* && wget  -q https://raw.githubusercontent.com/curtinlv/gd/main/update.sh >/dev/null && bash update.sh
+if [ -d /ql/data ];then QL=/ql/data;else QL=/ql; fi;cd ${QL} && rm -f update.sh* && wget  -q https://raw.githubusercontent.com/rollky/gd/master/update.sh >/dev/null && bash update.sh
 
 ## 卸载机器人
 pm2 stop jbot && pm2 delete jbot
