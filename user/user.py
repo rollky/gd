@@ -302,6 +302,7 @@ async def activityID(event):
         except:
             group = f'[{event.chat.id}](https://t.me/c/{event.chat.id}/{event.message.id})'
         name = None
+        
         for i in envNameList:
             if i in text:
                 name = nameList[envNameList.index(i)]
@@ -310,11 +311,14 @@ async def activityID(event):
         if not name:
             return
         msg = await jdbot.send_message(chat_id, f'【监控】{group} 发出的 `[{name}]` 环境变量！', link_preview=False)
-        messages = event.message.text.split("\n")
+        messages = text.split("\n")
         change = ""
         is_exec = ""
         for message in messages:
             if "export " not in message:
+                continue
+            msg_result = re.findall(pat, text)
+            if msg_result <= 0:
                 continue
             kvs = re.sub(r'.*export ', 'export ', message)
             kv = kvs.replace("export ", "")
@@ -446,4 +450,5 @@ async def converter_handler(text):
         tip = '建议百度/谷歌进行查询'
         await jdbot.send_message(chat_id, f"{title}\n\n{name}\n{function}\n错误原因：{str(e)}\n\n{tip}")
         logger.error(f"错误--->{str(e)}")
+    logger.info(f"---==>{text}")
     return text
