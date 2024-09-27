@@ -13,7 +13,7 @@ try:
     else:
         QLMain = '/ql'
 except:
-    QLMain = '/ql'
+    QLMain = '/ql/data'
 
 CONFIG_DIR = f"{JD_DIR}/config"
 SCRIPTS_DIR = f"{JD_DIR}/scripts"
