@@ -8,13 +8,12 @@ JD_DIR = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
 # 兼容青龙新版目录
 try:
     qlver = os.environ['QL_BRANCH']
-    #if qlver >= 'v2.12.0':
-    if qlver =='master':
+    if qlver >= 'v2.12.0':
         QLMain='/ql/data'
     else:
         QLMain = '/ql'
 except:
-    QLMain = '/ql/data'
+    QLMain = '/ql'
 
 CONFIG_DIR = f"{JD_DIR}/config"
 SCRIPTS_DIR = f"{JD_DIR}/scripts"
