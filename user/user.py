@@ -318,7 +318,7 @@ async def activityID(event):
             if "export " not in message:
                 continue
             msg_result = re.findall(pat, text)
-            if msg_result <= 0:
+            if msg_result == 0:
                 continue
             kvs = re.sub(r'.*export ', 'export ', message)
             kv = kvs.replace("export ", "")
