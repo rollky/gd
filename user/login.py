@@ -7,8 +7,7 @@ from ..bot.utils import press_event, V4, row, split_list
 # 兼容青龙新版目录
 try:
     qlver = os.environ['QL_BRANCH']
-    #if qlver >= 'v2.12.0':
-    if qlver =='master':    
+    if qlver >= 'v2.12.0':  
         QLMain='/ql/data'
     else:
         QLMain = '/ql'
